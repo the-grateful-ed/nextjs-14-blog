@@ -1,7 +1,11 @@
-import MainContainer from "@/app/components/main-container";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
+import MainContainer from "@/components/main-container";
+import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,9 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MainContainer>
-          <main>{children}</main>
-        </MainContainer>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MainContainer>
+            <Navbar />
+            <main>{children}</main>
+          </MainContainer>
+        </ThemeProvider>
       </body>
     </html>
   );
