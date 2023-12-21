@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        kalam: ['var(--font-kalam)'],
+        rubik: ["var(--font-rubik)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
