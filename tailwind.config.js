@@ -19,6 +19,7 @@ module.exports = {
       fontFamily: {
         kalam: ['var(--font-kalam)'],
         rubik: ['var(--font-rubik)'],
+        victorMono: ['var(--font-victor-mono)'],
       },
       colors: {
         border: 'hsl(var(--border))',
