@@ -8,15 +8,15 @@ export const tag = defineType({
     {
       name: 'name',
       title: 'Tag Name',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'name',
-      },
-    },
-  ],
+        source: 'name'
+      }
+    }
+  ]
 });

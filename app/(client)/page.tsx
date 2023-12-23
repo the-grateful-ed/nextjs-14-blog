@@ -30,8 +30,8 @@ export default async function Home() {
   return (
     <main>
       <Header title='Articles' />
-      <div>
-      {posts?.length > 0 &&
+      <div className='space-y-8 flex flex-col'>
+        {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
       </div>
     </main>
