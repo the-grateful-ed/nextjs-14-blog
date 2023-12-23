@@ -43,7 +43,7 @@ export default function RootLayout({
           <MainContainer>
             <div className='flex flex-col h-screen'>
               <Navbar />
-              <main className='flex flex-1'>{children}</main>
+              <main className='flex-1'>{children}</main>
               <Footer />
             </div>
           </MainContainer>
