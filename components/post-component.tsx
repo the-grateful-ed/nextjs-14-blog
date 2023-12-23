@@ -1,24 +1,24 @@
-import { JetBrains_Mono, VT323 } from "next/font/google";
-import Link from "next/link";
-import React from "react";
+import { JetBrains_Mono, VT323 } from 'next/font/google';
+import Link from 'next/link';
+import React from 'react';
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from '@/components/ui/badge';
 
-import { type Post } from "@/utils/interface";
+import { type Post } from '@/utils/interface';
 
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
 interface Props {
   post: Post;
 }
 
-const font = JetBrains_Mono({ weight: "400", subsets: ["latin"] });
-const dateFont = VT323({ weight: "400", subsets: ["latin"] });
+const font = JetBrains_Mono({ weight: '400', subsets: ['latin'] });
+const dateFont = VT323({ weight: '400', subsets: ['latin'] });
 
 const PostComponent = ({ post }: Props) => {
   return (
@@ -30,26 +30,26 @@ const PostComponent = ({ post }: Props) => {
     // <p className={`${dateFont.className} my-2 text-purple-800`}>
     //   {new Date(post?.publishedAt).toDateString()}
     // </p>
-    //     <p className='dark:text-gray-400 mb-4 line-clamp-2'>{post?.excerpt}</p>
+    //     <p className='mb-4 dark:text-gray-400 line-clamp-2'>{post?.excerpt}</p>
     //     <div>
     // {post?.tags?.map((tag) => <Badge key={tag?._id}>#{tag?.name}</Badge>)}
     //     </div>
     //   </Link>
     // </Card>
     <Link href={`/posts/${post?.slug?.current}`}>
-      <Card className="block w-full rounded-xl overflow-hidden border border-primary bg-card shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-        <CardHeader className="border-b-2 border-[#0000002d] text-neutral-600">
-          <h5 className="text-xl font-medium leading-tight text-primary">
+      <Card className='block w-full rounded-xl overflow-hidden border border-primary bg-card shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]'>
+        <div className='px-6 py-2 border-b-2 border-[#0000002d] text-neutral-600'>
+          <h5 className='text-xl font-medium leading-tight text-primary'>
             {post?.title}
           </h5>
-        </CardHeader>
+        </div>
         <CardContent>
           <p className={`${dateFont.className}  text-purple-800`}>
             {new Date(post?.publishedAt).toDateString()}
           </p>
-          <p className="text-base text-primary line-clamp-3">{post?.excerpt}</p>
+          <p className='text-base text-primary line-clamp-3'>{post?.excerpt}</p>
         </CardContent>
-        <CardFooter className="space-x-2">
+        <CardFooter className='space-x-2'>
           {post?.tags?.map((tag) => <Badge key={tag?._id}>#{tag?.name}</Badge>)}
         </CardFooter>
       </Card>

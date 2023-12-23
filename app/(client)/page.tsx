@@ -28,9 +28,12 @@ export default async function Home() {
   console.log(posts, 'posts');
 
   return (
-    <main>
+    <main className='bg-muted'>
       <Header title='Articles' />
-      <div className='space-y-8 flex flex-col'>
+      <h3 className='py-12 mx-10 text-3xl font-medium leading-tigh text-foreground'>
+        Blog
+      </h3>
+      <div className='flex flex-col px-2 space-y-6'>
         {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
       </div>
