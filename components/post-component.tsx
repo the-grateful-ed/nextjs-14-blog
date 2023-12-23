@@ -38,15 +38,15 @@ const PostComponent = ({ post }: Props) => {
     // </Card>
     <Link href={`/posts/${post?.slug?.current}`}>
       <Card className="block w-full rounded-xl overflow-hidden border border-primary bg-card shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-        <CardHeader className="border-b-2 border-[#0000002d] px-6 py-3 text-neutral-600">
-          <p className={`${dateFont.className} my-2 text-purple-800`}>
+        <CardHeader className="border-b-2 border-[#0000002d] text-neutral-600">
+          <h5 className="text-xl font-medium leading-tight text-primary">
+            {post?.title}
+          </h5>
+        </CardHeader>
+        <CardContent>
+          <p className={`${dateFont.className}  text-purple-800`}>
             {new Date(post?.publishedAt).toDateString()}
           </p>
-        </CardHeader>
-        <CardContent className="p-6">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-primary">
-          {post?.title}
-          </h5>
           <p className="text-base text-primary line-clamp-3">{post?.excerpt}</p>
         </CardContent>
         <CardFooter className="space-x-2">
