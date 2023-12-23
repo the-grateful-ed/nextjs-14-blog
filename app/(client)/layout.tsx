@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Kalam, Victor_Mono, Rubik } from 'next/font/google';
 import React from 'react';
+import Footer from '@/components/footer';
 
 import './globals.css';
 
@@ -40,8 +41,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <MainContainer>
-            <Navbar />
-            <main>{children}</main>
+            <div className='flex flex-col h-screen'>
+              <Navbar />
+              <main className='flex flex-1'>{children}</main>
+              <Footer />
+            </div>
           </MainContainer>
         </ThemeProvider>
       </body>
